@@ -1,4 +1,4 @@
-import sys, math, struct, pickle, hashlib
+import sys, math, struct, pickle, hashlib, lib
 
 def main():
 	if (len(sys.argv) != 7):
@@ -32,6 +32,23 @@ def main():
 		with open("./addresses/" + entry_file, "rb") as file:
 			for line in file.read():
 				print(line)
+			
+				if (cache_val[n_bits_indice]==0):
+					cont_miss_comp +=1
+					cache_val[n_bits_indice] = 1
+					cache_tag[n_bits_indice] = n_bits_tag
+				
+				elif (cache_tag[n_bits_indice]==n_bits_tag):
+					cont_hit +=1
+				
+				else:
+					if (cache_tag[n_bits_indice]!=n_bits_tag and cache_val[n_bits_indice]==1):
+						cont_miss_conf +=1
+
+					else:
+						cont_miss_cap += 1
+
+				
 			# lines = list(file.read())
 			# addresses = []
 			# del lines[:3]

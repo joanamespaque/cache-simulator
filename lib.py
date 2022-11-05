@@ -20,7 +20,10 @@ def check_tag():
   print('teste')
 
 # define o tipo de miss
-def miss_type():
+def miss_type(x):
+  cont_miss_comp =0
+  if (x == 0):
+    cont_miss_comp +=1
   print('teste')
 
 # calcula miss rate

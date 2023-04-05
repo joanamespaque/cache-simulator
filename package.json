@@ -1,0 +1,39 @@
+{
+  "name": "cache-simulator",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Cache simulator for computer architecture and organization II, discipline of the bachelor's degree in computer science at UFPel",
+  "main": "index.js",
+  "dependencies": {
+    "ansi-styles": "^4.3.0",
+    "chalk": "^4.1.2",
+    "cli-style": "^0.1.1",
+    "color-convert": "^2.0.1",
+    "color-name": "^1.1.4",
+    "has-flag": "^4.0.0",
+    "obop": "^0.2.3",
+    "process.argv": "^0.6.1",
+    "supports-color": "^7.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joanamespaque/cache-simulator.git"
+  },
+  "keywords": [
+    "cache",
+    "simulator",
+    "ufpel",
+    "computer",
+    "architecture"
+  ],
+  "author": "joana mespaque and gabriela ribeiro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joanamespaque/cache-simulator/issues"
+  },
+  "homepage": "https://github.com/joanamespaque/cache-simulator#readme"
+}

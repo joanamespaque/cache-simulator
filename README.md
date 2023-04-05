@@ -1,39 +1,53 @@
 ## Trabalho 2 - Arquitetura e Organização de Computadores II
 
-
 ### :rocket: Guia de execução
 
-Para executar esse projeto, é necessário que você tenha python3 instalado na sua máquina.
+Para executar esse projeto, é necessário que você tenha o node instalado na sua máquina.
 
-Primeiro verifique se o Python já está instalado
-
-```
-$ python --version
-```
-
-Se o Python não estiver instalado, instale usando o gerenciador de pacote de distribuição
+Primeiro verifique se o node já está instalado
 
 ```
-$ sudo apt-get install python3
+$ node --version
 ```
 
-Para verificar se a instalação foi realizada corretamente, execute
+Se não estiver instalado, instale usando o gerenciador de pacote de distribuição
+
+Antes de tudo, atualize o seu índice de pacotes locais
 
 ```
-$ python3 --version
+$ sudo apt update
+```
+
+Depois instale o Node.js
+
+```
+$ sudo apt install nodejs
+```
+
+Para verificar se a instalação foi realizada corretamente, execute novamente
+
+```
+$ node --version
+```
+
+Agora precisamos instalar as dependências do projeto, utilize
+
+```
+$ npm install
 ```
 
 ### :computer: Projeto - Simulador de Cache
+
 A configuração de cache deverá ser repassada por linha de comando e formatada com os seguintes
 parâmetros (o arquivo de entrada poderá ter extensão):
 
 ```
-$ cache_simulator <nsets> <bsize> <assoc> <substituição> <flag_saida> arquivo_de_entrada
+$ node cache-simulator.js <nsets> <bsize> <assoc> <substituição> <flag_saida> arquivo_de_entrada
 ```
 
 Onde cada um destes campos possui o seguinte significado:
-- cache_simulator - nome do arquivo de execução principal do simulador (todos devem usar este
-nome, independente da linguagem escolhida;
+
+- cache-simulator.js - nome e extensão do arquivo de execução principal do simulador
 - nsets - número de conjuntos na cache;
 - bsize - tamanho do bloco em bytes;
 - assoc - grau de associatividade;

@@ -38,8 +38,32 @@ try {
   }
 
   // TODO: #4 #3 calcular tamanho da cache
+  // O tamanho da cache é dado pelo produto do número de conjuntos na cache (<nsets>), tamanho do bloco em bytes (<bsize>) e associatividade (<assoc>).
+  const cache_size = info.nsets * info.bsize * info.assoc;
   // TODO: #5 criar cache como uma matriz, dependendo da associatividade
+  let cache = [];
+  const n_words = info.bsize / 32;
+  // adiciona conjuntos a cache
+  for (let n_sets = 0; n_sets < info.nsets; n_sets++) {
+    let set = [];
+    for (let i = 0; i < info.assoc; i++) {
+      let block = [];
+      for (let j = 0; j < n_words; j++) {
+        block.push(null);
+      }
+      set.push(block);
+    }
+    cache.push(set);
+  }
   // TODO: #6 calcular taxa de misses compulsórios, de capacidade e conflito
+  // para mapeamento direto:
+  // do something
+  // para totalmente associativo:
+  // do something
+  // para conjunto associativo n-way:
+  // do something
+  // como ler cada um dos endereços para comparação:
+  //    addresses.forEach((item) => {});
   // TODO: #7 calcular taxa de hits
 } catch ({ message, code }) {
   console.error("Erro encontrado:", message);

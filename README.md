@@ -47,7 +47,7 @@ $ node cache-simulator.js <nsets> <bsize> <assoc> <substituição> <flag_saida> 
 
 Onde cada um destes campos possui o seguinte significado:
 
-- cache-simulator.js - nome e extensão do arquivo de execução principal do simulador
+- cache_simulator.js - nome e extensão do arquivo de execução principal do simulador
 - nsets - número de conjuntos na cache;
 - bsize - tamanho do bloco em bytes;
 - assoc - grau de associatividade;

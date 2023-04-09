@@ -37,14 +37,10 @@ try {
     addresses.push(data.readInt32BE(i));
   }
 
-  // TODO #1
-  // A saída do simulador será um relatório de estatísticas com:
-  // número total de acessos
-  // número total hits e misses (os misses deverão ser classificados em compulsórios, capacidade e conflito)
-  // • flag_saida = 0
-  //      pode conter textos com labels para facilitar a visualização. Ex: Taxa de hits = 90%.
-  // • flag_saida = 1
-  //      Ex: 100000, 0.95, 0.06, 0.01, 0.02, 0.03
+  // TODO: #4 #3 calcular tamanho da cache
+  // TODO: #5 criar cache como uma matriz, dependendo da associatividade
+  // TODO: #6 calcular taxa de misses compulsórios, de capacidade e conflito
+  // TODO: #7 calcular taxa de hits
 } catch ({ message, code }) {
   console.error("Erro encontrado:", message);
   // verificar se a linha de comando tem o total correto de argumentos:

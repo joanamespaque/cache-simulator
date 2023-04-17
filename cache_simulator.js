@@ -32,7 +32,7 @@ try {
 
   const addresses = [];
 
-  const data = fs.readFileSync(info["file_path"]);
+  const data = fs.readFileSync(info.file_path);
   for (let i = 0; i <= data.length - 4; i += 4) {
     addresses.push(data.readInt32BE(i));
   }
@@ -42,31 +42,36 @@ try {
   const cache_size = info.nsets * info.bsize * info.assoc;
   // TODO: #5 criar cache como uma matriz, dependendo da associatividade
   let cache = [];
-  const n_words = info.bsize / 32;
   // adiciona conjuntos a cache
   for (let n_sets = 0; n_sets < info.nsets; n_sets++) {
     let set = [];
     for (let i = 0; i < info.assoc; i++) {
-      let block = [];
-      for (let j = 0; j < n_words; j++) {
-        block.push(null);
-      }
-      set.push(block);
+      set.push([]);
     }
     cache.push(set);
   }
+  console.log(cache);
+  const n_bits_offset = Math.log2(info.bsize);
+  const n_bits_indice = Math.log2(info.nsets);
+  const n_bits_tag = 32 - n_bits_indice - n_bits_offset;
   // TODO: #6 calcular taxa de misses compulsórios, de capacidade e conflito
+  let n_compulsory_miss = 0;
+  let n_capacity_miss = 0;
+  let n_conflict_miss = 0;
   // para mapeamento direto:
-  // do something
-  // para totalmente associativo:
-  // do something
-  // para conjunto associativo n-way:
-  // do something
+  if (info.assoc === 1) {
+    addresses.forEach((item) => {
+      const tag = item >> (n_bits_offset + n_bits_indice);
+      const indice = (item >> n_bits_offset) & Math.pow(2, n_bits_indice - 1);
+    });
+  } else {
+    // para totalmente associativo ou n-way:
+  }
+
   // como ler cada um dos endereços para comparação:
-  //    addresses.forEach((item) => {});
   // TODO: #7 calcular taxa de hits
 } catch ({ message, code }) {
-  console.error("Erro encontrado:", message);
+  console.error("Erro encontrado: ", message);
   // verificar se a linha de comando tem o total correto de argumentos:
   if (code === "ENOENT") {
     console.error("Verifique o arquivo binário passado como argumento.");

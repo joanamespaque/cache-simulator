@@ -59,11 +59,15 @@ try {
   let n_capacity_miss = 0;
   let n_conflict_miss = 0;
   // para mapeamento direto:
-  if (info.assoc === 1) {
-    addresses.forEach((item) => {
-      const tag = item >> (n_bits_offset + n_bits_indice);
-      const indice = (item >> n_bits_offset) & Math.pow(2, n_bits_indice - 1);
-    });
+  addresses.forEach((item) => {
+    let address = item;
+    const tag = address >> (n_bits_offset + n_bits_indice);
+    const indice = (address >> n_bits_offset) & Math.pow(2, n_bits_indice - 1);
+    console.log("address: ", address);
+    console.log("indice: ", indice);
+    console.log("tag: ", tag);
+  });
+  if (info.assoc == 1) {
   } else {
     // para totalmente associativo ou n-way:
   }
